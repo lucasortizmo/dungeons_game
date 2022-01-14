@@ -18,8 +18,8 @@ class Hero extends GameObject {
     velocity = new PVector (0, 0);
     size = 30;
     lives = 10;
-    roomX = 7;
-    roomY = 8;
+    roomX = 1;
+    roomY = 1;
     myWeapon = new Weapon();
 
     currentGun = 1;
@@ -38,6 +38,10 @@ class Hero extends GameObject {
   }
 
   void show () {
+    
+    if (roomX == 8 && roomY == 8) {
+    game.play();
+    }
     // weapon shooting
     myGuns[currentGun].update();
     if (spacekey) myGuns[currentGun].shoot();
@@ -57,7 +61,7 @@ class Hero extends GameObject {
 
   void act () {
     super.act();
-
+    
     speedTimer--;
 
     if (lives <= 0) {

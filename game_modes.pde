@@ -18,7 +18,6 @@ void intro () {
   // mode switch
   if (introButton.clicked) {
     mode = GAME;
-    game.loop();
   }
 }
 
@@ -38,7 +37,6 @@ void pause () {
   pauseGif.show();
   if (pausekey == false) {
     mode = GAME;
-    game.loop();
   }
 
   textMode(CENTER);
